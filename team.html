@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>	
+<!-- ****************************************************************** -->
+<!-- Title:     Bottles of Beer                                         -->
+<!-- Site:      None                                                    -->
+<!-- Author:    Jahsie Ault and Nic Wolf                                -->
+<!-- Sources:   None                                                    -->
+<!-- Revision:                                                          -->
+<!-- ****************************************************************** -->
+<head>
+<script type="text/javascript">
+//When window loads start this
+window.onload = Init;
+	//define function
+	function Init() {
+	//define variable 	
+	var bottlesOfBeer = 99;
+	//define variable "paragraph" as the ID from the HTML
+	var paragraph = document.getElementById("paragraph");
+	paragraph.style.background = "red";
+	
+	//define while loop. As long as "bottlesOfBeer" is bigger than/equal to 1...
+	while (bottlesOfBeer >= 1) {
+		//add the new value of "bottlesOfBeer" to the inner HTML 
+		paragraph.innerHTML += bottlesOfBeer + " ";
+		//once done with that, subtract 1 from the value of bottlesOfBeer
+		bottlesOfBeer--;
+	}
+
+}//end of Init()
+
+
+</script>
+
+</head>
+
+<body>
+	<p id="paragraph"></p>
+</body>
+</html>
