@@ -28,7 +28,7 @@ var Persons = [
 		name: "Andrew",
 		role: "teacher",
 		age: 30,
-		favColor: "Black",
+		favColor: "Plaid",
 		hobby: "Javascript",
 	},
 ];
@@ -36,11 +36,11 @@ var Persons = [
 window.onload = Init; 
 
 //function to determine role
-function isTeacher(Person) {
-	if (Person.role.toLowerCase === "teacher") {
-		paragraph.innerHTML(person.name + " is a teacher at PCS!");
+function isTeacher(dude) {
+	if (dude.role.toLowerCase() === "teacher") {
+		paragraph.innerHTML = dude.name + " is a teacher at PCS!";
 	} else {
-		paragraph.innerHTML(person.name + " is a LOSAR");
+		paragraph.innerHTML = dude.name + " is a LOSAR (aka student)";
 	}
 }
 
@@ -48,15 +48,14 @@ function isTeacher(Person) {
 function atPCS(Persons, userInput) {
 	for (var i = 0; i < Persons.length; i++) {
 		var tempName = Persons[i].name;
-		if (tempName === userInput) {
+		if (tempName.toLowerCase() === userInput.toLowerCase()) {
 			alert(tempName + " is at PCS!");
-			return tempName;
-		} else {
-			alert("Nobody here named " + userInput);
-			return false;
-		}
-	}
-	return false;
+			var attendee = Persons[i];
+			return attendee;
+			}
+		} 
+		alert("Nobody here named " + userInput);
+		return false;
 }
 
 function Init() {
